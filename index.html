@@ -1,0 +1,314 @@
+<html>
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<meta name="viewport" content="width=device-width">
+</head>
+
+
+<body>
+
+<h1 id = "title">David's Select Quotes from Others</h1>
+
+<div id = "middleBox">
+
+	<div id = "q"> 
+		
+		<p id = "qText">
+			
+			</p>
+	</div>		
+	
+	<div id = "qAuthor"> </div>
+	<button id = "toggle">New Quote </button>
+</div>
+
+
+	<a id="tweetQuote" class = "twitter-share-button" href="#">
+		<div id = "tweetHolder">
+			<p id = "tweetThis"> Tweet This! </p>
+		</div>
+     </a>
+
+</body>
+
+
+</html>
+
+
+<script>
+
+
+var quotes = [
+
+ { quote:"\"Realize deeply that the present moment is all you ever have. Make the Now the primary focus of your life.\"",
+  author: "Eckhart Tolle" },
+
+  { quote: "\"Always say 'yes' to the present moment... Surrender to what is. Say 'yes' to life - and see how life starts suddenly to start working for you rather than against you.\"",
+  author: "Eckhart Tolle" },
+  
+  {quote: "\"There is no innovation and creativity without failure. Period.\"",
+  author: "Brene Brown" },
+ 
+ { quote: "\"Creativity involves breaking out of established patterns in order to look at things in a different way.\"",
+  author: "Edward de Bono" },
+ 
+ { quote: "\"As technology advances, it reverses the characteristics of every situation again and again. The age of automation is going to be the age of 'do it yourself.' \"",
+	author: "Marshall McLuhan" },
+ 
+ {quote: "\"Nobody ever drowned in their own sweat\"",
+   author: "Ann Landers"},
+  
+  {quote: "\"Working through will-power is the domain of the mind, however, it’s highly unnecessary to employ your personal will when you have your life-force providing the momentum to live your natural expression. \"",
+   author: "Sen"},
+ 
+ {quote: "\"Whatever is your natural expression comes through when you let go of the struggle created through forcing yourself from a place of fear/lack created motivations. \"",
+   author: "Sen"},
+  
+  {quote: "\"Music expresses that which cannot be said and on which it is impossible to be silent. \"",
+   author: "Victor Hugo"},
+  
+  {quote: "\"Every man's work, whether it be literature, or music or pictures or architecture or anything else, is always a portrait of himself. \"",
+   author: "Samuel Butler"},
+  
+  {quote: "\"The hardest work in the world is being out of work. \"",
+   author: "Whitney Young Jr."},
+  
+  {quote: "\"I have lived with several Zen masters -- all of them cats.\"",
+   author: "Eckhart Tolle"},
+	
+	{quote: "\"Letting go is the lesson. Letting go is always the lesson. Have you ever noticed how much of our agony is all tied up with craving and loss? \"",
+	author: "Susan Gordon Lynch"},
+  
+  {quote: "\"It is better to conquer yourself than to win a thousand battles. Then the victory is yours. It cannot be taken from you, not by angels or by demons, heaven or hell.\"",
+   author: "Buddha"},
+  
+  {quote: "\"When an ordinary man attains knowledge, he is a sage; when a sage attains understanding, he is an ordinary man. \"",
+   author: "Anonymous"},
+   
+   {quote: "\"Think with your whole body. \"",
+   author: "Taisen Deshimaru"},
+   
+   {quote: "\"The only real valuable thing is intuition. \"",
+   author: "Albert Einstein"},
+   
+   {quote: "\"Have faith in your intuition and listen to your gut feeling. \"",
+   author: "Ann Cotton"},
+   
+   {quote: "\"Life gives you plenty of time to do whatever you want to do if you stay in the present moment.\" ",
+   author: "Deepak Chopra"}
+   
+  ]
+  
+  
+  var colors = ["#001f3f", "#0074D9", "#7FDBFF", "#FFDC00", "#B10DC9", "#FF4136", "#FF851B", "#B10DC9", "#111111", "#01FF70"];
+
+  
+  //document.getElementById("yo").innerHTML = "hello world";
+  
+$(document).ready(function(){
+  
+	giveQuote();
+  
+  $("#toggle").click(function(){
+  
+		giveQuote();
+
+  });
+
+
+  
+    function giveQuote() {
+		 
+		 var randomNum = Math.floor((Math.random() * 20) + 0);
+		 var randomNum2 = Math.floor((Math.random() * 10) + 0);
+		 var randomQuote = (quotes[randomNum].quote);
+		 var randomAuthor = (quotes[randomNum].author);
+		 
+		 var aColor = colors[randomNum2];
+		 
+		 
+		
+		 
+	
+			$('#tweetQuote').attr('href', 'https://twitter.com/intent/tweet?text='+randomQuote).attr('target', '_blank');
+			//$.getScript('http://platform.twitter.com/widgets.js');
+	
+		
+	 
+		 /*Gets random quote but makes it not visible */
+		$("#qText").html(randomQuote);
+		$('#qText').css("visibility", "hidden");
+		$('#middleBox').css("visibility", "hidden");
+		
+		var height = $("#q").height();
+		
+		//Adjustments to #middleBox on normal screen size
+		if($(window).width() > 600) {
+		
+			
+			if ( height > "200") {
+				
+				$("#middleBox").css("height", "350px");
+			}
+									
+				
+			if ( height < "200") {
+			
+					$("#middleBox").css("height", "300px");
+			}
+			
+			
+			if (height < "150") {
+					$("#middleBox").css("height", "250px");
+			
+			}
+	
+	
+	}
+	
+	
+	
+		
+   //Medium screen size, adjusts #middleBox differently			
+	if($(window).width() < 600) {
+			var height2 = $("#q").height();
+		
+			
+			if ( height2 > "150") {
+			
+			$("#middleBox").css("height", "325px");
+			
+			}
+								
+			
+			if ( height2 < "150") {
+		
+				$("#middleBox").css("height", "250px");
+			}
+			
+		
+	
+		}
+	
+	
+   //Small screen size, adjusts #middleBox differently			
+	if($(window).width() < 400) {
+			var height2 = $("#q").height();
+		
+		
+			if ( height2 > "150") {
+			
+			$("#middleBox").css("height", "300px");
+			
+			}
+								
+			
+			if ( height2 < "150") {
+		
+				$("#middleBox").css("height", "200px");
+			}
+			
+		
+	
+		}
+
+
+		//Executes on a resize
+		$(window).resize(function(){
+		
+			if ($(window).width() < 600) {
+				
+		
+				$("#middleBox").css("height", "300px");
+			}
+			
+			
+			if ($(window).width() > 600) {
+				
+				$("#middleBox").css("height", "300px");
+			}
+		
+		
+		});
+
+			
+			
+			
+			$("#middleBox").fadeOut(400, function() {
+					$('#middleBox').css("visibility", "visible");
+				$("#middleBox").fadeIn(400, function() {
+		
+						
+			});
+		  });
+		
+		
+		
+		
+		
+		
+		 	
+			$("#qText").fadeOut(400, function() {
+					
+					$('#qText').css("visibility", "visible");
+					$("#qText").html(randomQuote).fadeIn(1000, function() {
+						
+			
+			});
+			
+			});
+			
+			
+			$("#qAuthor").fadeOut(400, function() {
+					 $("#qText").css('color', aColor);
+		             $("#qAuthor").css('color', aColor);
+					
+				$("#qAuthor").html(randomAuthor).fadeIn(1000, function() {		
+			
+			});
+			
+			});
+			
+			
+			
+			$("#toggle").fadeOut(400, function() {
+					 $("#toggle").css('background-color', aColor);
+		            
+					
+				$("#toggle").fadeIn(400, function() {		
+			
+			});
+			
+			});
+			
+			
+			
+				$("#tweetHolder").fadeOut(400, function() {
+					
+					$("#tweetHolder").fadeIn(400, function() {		
+			
+			});
+			
+			});
+			
+			
+						
+		 $('body').css("background-color", aColor);
+		 	 
+	
+		 
+  
+  }
+ 
+    
+});
+
+
+
+
+</script>

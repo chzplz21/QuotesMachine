@@ -1,0 +1,213 @@
+
+
+body {
+	 -webkit-transition: background-color 2s ease;
+	background-color: #001f3f;
+}
+
+#title {
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+	font-size: 70px;
+}
+
+
+
+/*Big Middle Box */
+#middleBox {
+  margin: 0 auto;
+  margin-top: 100px;
+  height: 300px;
+  border: solid black;
+  width: 500px;
+  text-align: center;
+
+  font-size: 30px;
+  position: relative;
+  background-color: white;
+ 
+}
+
+/*Box for quote */
+#q {
+	top: 5%;
+	position: absolute;
+	height: auto;
+	
+	left: 50px;
+	right: 50px;
+	-webkit-transition: color 2s ease;
+	font-family: 'Josefin Sans', sans-serif;
+	
+	
+}
+
+
+
+
+/*Author of quote */
+#qAuthor {
+	position: absolute;
+	height: 50px;
+	left: 200px;
+	right: 5px;
+	bottom: 0;
+	
+	-webkit-transition: color 2s ease;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+
+
+#toggle {
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+	
+	background-color: #001f3f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+#tweetHolder {
+	margin: 0 auto;
+	width: 50px;
+	height: 20px;
+	margin-top: 20px;
+	background-color: #1DA1F2;
+    color: white;
+    padding: 15px 32px;
+	text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+	font-family: 'Josefin Sans', sans-serif;		
+}
+
+#tweetThis {
+	width: 100%;
+	margin-top: -10px;
+	
+}
+
+a {
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+	
+	
+	#title {
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+	font-size: 50px;
+}
+	
+	
+	#middleBox {
+	
+	  margin-top: 20%;
+	  height: 300px;
+	  border: solid black;
+	  width: 425px;
+	  text-align: center;
+
+	  font-size: 22px;
+	  position: relative;
+	  background-color: white;
+ 
+}
+	
+	
+}
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+	
+
+#title {
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+	font-size: 40px;
+}
+	
+#middleBox {
+ 
+  margin-top: 0;
+  height: 200px;
+  border: solid black;
+  width: 250px;
+  text-align: left;
+
+  font-size: 20px;
+  position: relative;
+  background-color: white;
+ 
+}
+
+
+#q {
+	top: 5%;
+	position: absolute;
+	height: auto;
+	
+	left: 10px;
+	right: 10px;
+	-webkit-transition: color 2s ease;
+	font-family: 'Josefin Sans', sans-serif;
+	
+	
+}
+
+
+#qAuthor {
+	position: absolute;
+	height: 50px;
+	left: 150px;
+	right: 0;
+	text-align: center;
+	bottom: 30px;
+	
+	-webkit-transition: color 2s ease;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+	
+
+#toggle {
+	position: absolute;
+	bottom: 20px;
+	left: 5px;
+	
+	background-color: 
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+	
+
+#tweetHolder {
+	margin: 0 auto;
+	width: 30px;
+	height: 10px;
+	margin-top: 20px;
+	background-color: #1DA1F2;
+    color: white;
+    padding: 15px 32px;
+	text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+	font-family: 'Josefin Sans', sans-serif;		
+}
